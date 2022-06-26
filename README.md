@@ -1,4 +1,13 @@
-### Hi there 👋
+<div>
+  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=lelozitos&show_icons=true&theme=darcula&include_all_commits=true&count_private=true"/> 
+  <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=lelozitos&layout=compact&langs_count=7&theme=darcula"/>
+  <!--algolia/darcula/gotham/tokyonight/outrun -->
+</div>
+<!-- https://devicon.dev -->
+<div style="display: inline_block"><br>
+  <img align="center" alt="JavaScript" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg">
+  <img align="center" alt="C++" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg">
+</div>
 
 <!--
 **Lelozitos/Lelozitos** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
