@@ -1,0 +1,96 @@
+.about {
+	background: var(--bg-secondary);
+}
+
+.about__inner {
+	display: flex;
+	align-items: flex-start;
+	gap: 64px;
+}
+
+.about__avatar {
+	position: relative;
+	flex-shrink: 0;
+	width: 160px;
+	height: 160px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.about__avatar-ring {
+	position: absolute;
+	inset: 0;
+	border-radius: 50%;
+	border: 1.5px solid rgba(0, 210, 122, 0.3);
+	animation: spinRing 8s linear infinite;
+}
+
+@keyframes spinRing {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.about__avatar-core {
+	width: 120px;
+	height: 120px;
+	background: var(--bg-card);
+	border-radius: 50%;
+	border: 1px solid var(--border);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0 40px rgba(0, 210, 122, 0.12);
+}
+
+.about__name {
+	font-size: 1.9rem;
+	font-weight: 800;
+	margin-bottom: 20px;
+	letter-spacing: -0.5px;
+}
+
+.about__bio {
+	font-size: 0.97rem;
+	line-height: 1.75;
+	color: var(--text-secondary);
+	margin-bottom: 16px;
+	max-width: 660px;
+}
+
+.about__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 28px;
+}
+
+.tag {
+	font-size: 0.75rem;
+	font-weight: 500;
+	padding: 5px 14px;
+	border-radius: 100px;
+	background: var(--bg-card);
+	border: 1px solid var(--border);
+	color: var(--text-secondary);
+	transition: all 0.2s ease;
+}
+
+.tag:hover {
+	border-color: var(--accent-green);
+	color: var(--accent-green);
+}
+
+@media (max-width: 768px) {
+	.about__inner {
+		flex-direction: column;
+		gap: 32px;
+	}
+	.about__avatar {
+		align-self: center;
+	}
+}

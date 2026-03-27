@@ -1,0 +1,141 @@
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 60px;
+	transition: all 0.3s ease;
+}
+
+.navbar--scrolled {
+	background: rgba(7, 11, 18, 0.85);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	padding: 14px 60px;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.navbar__logo {
+	font-size: 1.3rem;
+	font-weight: 700;
+	font-family: var(--font-mono);
+	letter-spacing: -0.5px;
+}
+
+.navbar__logo-bracket {
+	color: var(--accent-green);
+}
+
+.navbar__logo-name {
+	color: var(--text-primary);
+}
+
+.navbar__links {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	list-style: none;
+}
+
+.navbar__link {
+	color: var(--text-secondary);
+	font-size: 0.9rem;
+	font-weight: 500;
+	padding: 8px 16px;
+	border-radius: var(--radius-sm);
+	transition:
+		color 0.2s ease,
+		background 0.2s ease;
+}
+
+.navbar__link:hover {
+	color: var(--text-primary);
+	background: rgba(255, 255, 255, 0.05);
+}
+
+.navbar__cta {
+	background: var(--accent-green);
+	color: #000;
+	font-size: 0.85rem;
+	font-weight: 700;
+	padding: 9px 22px;
+	border-radius: var(--radius-sm);
+	transition:
+		opacity 0.2s ease,
+		box-shadow 0.2s ease;
+	letter-spacing: 0.3px;
+}
+
+.navbar__cta:hover {
+	opacity: 0.88;
+	box-shadow: 0 0 24px rgba(0, 210, 122, 0.4);
+}
+
+/* Burger */
+.navbar__burger {
+	display: none;
+	flex-direction: column;
+	gap: 5px;
+	background: none;
+	border: none;
+	padding: 4px;
+}
+
+.navbar__burger span {
+	display: block;
+	width: 24px;
+	height: 2px;
+	background: var(--text-primary);
+	border-radius: 2px;
+	transition: all 0.3s ease;
+}
+
+.navbar__burger.open span:nth-child(1) {
+	transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__burger.open span:nth-child(2) {
+	opacity: 0;
+}
+
+.navbar__burger.open span:nth-child(3) {
+	transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+	.navbar {
+		padding: 18px 24px;
+	}
+	.navbar--scrolled {
+		padding: 14px 24px;
+	}
+	.navbar__burger {
+		display: flex;
+	}
+	.navbar__links {
+		display: none;
+		position: fixed;
+		inset: 0;
+		background: rgba(7, 11, 18, 0.97);
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 32px;
+		font-size: 1.4rem;
+	}
+	.navbar__links--open {
+		display: flex;
+	}
+	.navbar__link {
+		font-size: 1.2rem;
+	}
+	.navbar__cta {
+		font-size: 1rem;
+		padding: 14px 40px;
+	}
+}

@@ -1,0 +1,147 @@
+.contact {
+	background: var(--bg-primary);
+	position: relative;
+	overflow: hidden;
+}
+
+.contact__inner {
+	max-width: 680px;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+}
+
+.contact__glow {
+	position: absolute;
+	top: -100px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 500px;
+	height: 500px;
+	background: radial-gradient(circle, rgba(0, 210, 122, 0.07), transparent 70%);
+	pointer-events: none;
+}
+
+.contact__title {
+	font-size: clamp(2rem, 4vw, 3rem);
+	margin-bottom: 20px;
+}
+
+.contact__subtitle {
+	font-size: 1rem;
+	color: var(--text-secondary);
+	line-height: 1.7;
+	margin-bottom: 40px;
+}
+
+.contact__links {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-bottom: 48px;
+}
+
+.contact__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 13px 28px;
+	background: var(--bg-card);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+	color: var(--text-primary);
+	font-size: 0.9rem;
+	font-weight: 600;
+	font-family: var(--font-sans);
+	transition: all 0.2s ease;
+}
+
+.contact__link:hover {
+	border-color: var(--accent-green);
+	color: var(--accent-green);
+	background: rgba(0, 210, 122, 0.05);
+	transform: translateY(-2px);
+}
+
+.contact__link--copy {
+	background: var(--bg-card);
+	border: 1px solid var(--border);
+}
+
+/* Terminal */
+.contact__terminal {
+	background: var(--bg-card);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+	overflow: hidden;
+	text-align: left;
+}
+
+.terminal__bar {
+	background: rgba(255, 255, 255, 0.04);
+	border-bottom: 1px solid var(--border);
+	padding: 10px 16px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+}
+
+.dot--red {
+	background: #ff5f57;
+}
+.dot--yellow {
+	background: #febc2e;
+}
+.dot--green {
+	background: #28c840;
+}
+
+.terminal__title {
+	font-size: 0.72rem;
+	color: var(--text-muted);
+	font-family: var(--font-mono);
+	margin-left: 8px;
+}
+
+.terminal__body {
+	padding: 20px 24px;
+	font-family: var(--font-mono);
+	font-size: 0.85rem;
+	line-height: 1.8;
+}
+
+.terminal__prompt {
+	color: var(--accent-green);
+	font-weight: 700;
+}
+
+.terminal__text {
+	color: var(--text-secondary);
+}
+
+.terminal__output {
+	display: block;
+	margin-top: 4px;
+}
+
+.terminal__cursor {
+	color: var(--accent-green);
+	animation: blink 1.2s step-end infinite;
+}
+
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
