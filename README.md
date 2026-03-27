@@ -1,5 +1,7 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=00d27a&height=200&section=header&text=Leandro&fontSize=80&fontColor=ffffff&animation=fadeIn" alt="Header" href="https://github.com/Lelozitos/Lelozitos/tree/main/landing-page"/>
+  <a href="https://lelozitos.github.io/Lelozitos/">
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=00d27a&height=200&section=header&text=Leandro&fontSize=80&fontColor=ffffff&animation=fadeIn" alt="Header" />
+  </a>
 </div>
 
 <div align="center">
