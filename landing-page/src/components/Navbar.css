@@ -84,6 +84,8 @@
 	background: none;
 	border: none;
 	padding: 4px;
+	z-index: 1001; /* Ensure it's above the menu overlay */
+	cursor: pointer;
 }
 
 .navbar__burger span {
