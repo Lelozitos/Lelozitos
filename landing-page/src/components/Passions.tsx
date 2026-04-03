@@ -103,13 +103,13 @@ const Passions: React.FC = () => {
 								</div>
 								<div className="f1-metric">
 									<span className="f1-metric__val" style={{ color: '#f0b429' }}>
-										5G
+										6G
 									</span>
 									<span className="f1-metric__label">Braking force</span>
 								</div>
 								<div className="f1-metric">
 									<span className="f1-metric__val" style={{ color: '#00d27a' }}>
-										1.5s
+										1.82s
 									</span>
 									<span className="f1-metric__label">Fastest pit stop</span>
 								</div>
@@ -157,21 +157,6 @@ const Passions: React.FC = () => {
 									/>
 								))}
 								<div className="sim-center-force" />
-							</div>
-
-							<div className="physics-tags">
-								{[
-									'N-Body',
-									'Barnes-Hut',
-									'SPH Fluid',
-									'Verlet Integration',
-									'Runge-Kutta',
-									'Monte Carlo',
-								].map((t) => (
-									<span key={t} className="physics-tag">
-										{t}
-									</span>
-								))}
 							</div>
 						</div>
 					</div>

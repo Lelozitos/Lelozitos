@@ -5,7 +5,7 @@ interface SkillGroup {
 	category: string;
 	icon: string;
 	color: 'green' | 'gold' | 'blue';
-	items: { name: string; level: number }[];
+	items: string[];
 }
 
 const SKILL_GROUPS: SkillGroup[] = [
@@ -14,35 +14,27 @@ const SKILL_GROUPS: SkillGroup[] = [
 		icon: '📈',
 		color: 'green',
 		items: [
-			{ name: 'Portfolio Optimization', level: 95 },
-			{ name: 'Algorithmic Trading', level: 88 },
-			{ name: 'Risk Metrics (VaR, CVaR)', level: 90 },
-			{ name: 'Efficient Frontier', level: 92 },
-			{ name: 'Covariance Denoising', level: 85 },
+			'Portfolio Optimization',
+			'Algorithmic Trading',
+			'Risk Metrics',
+			'Covariance Denoising',
 		],
 	},
 	{
 		category: 'Development',
 		icon: '⚙️',
 		color: 'blue',
-		items: [
-			{ name: 'Python / NumPy / Pandas', level: 96 },
-			{ name: 'Rust', level: 72 },
-			{ name: 'TypeScript / React', level: 88 },
-			{ name: 'C++', level: 70 },
-			{ name: 'Data Structures & Algorithms', level: 90 },
-		],
+		items: ['Python', 'C++', 'TypeScript', 'Rust'],
 	},
 	{
 		category: 'Physics & Simulation',
 		icon: '🔭',
 		color: 'gold',
 		items: [
-			{ name: 'N-Body Simulation', level: 80 },
-			{ name: 'Fluid Dynamics (SPH)', level: 68 },
-			{ name: 'F1 Aerodynamics Models', level: 75 },
-			{ name: 'Monte Carlo Methods', level: 88 },
-			{ name: 'Numerical Integration', level: 85 },
+			'Fluid Dynamics',
+			'F1 Aerodynamics Models',
+			'N-Body Simulation',
+			'Monte Carlo Methods',
 		],
 	},
 ];
@@ -72,26 +64,17 @@ const Skills: React.FC = () => {
 							</div>
 							<div className="skill-card__items">
 								{group.items.map((item) => (
-									<div key={item.name} className="skill-item">
-										<div className="skill-item__top">
-											<span className="skill-item__name">{item.name}</span>
-											<span
-												className="skill-item__pct"
-												style={{ color: colorMap[group.color] }}
-											>
-												{item.level}%
-											</span>
-										</div>
-										<div className="skill-item__track">
-											<div
-												className="skill-item__bar"
-												style={{
-													width: `${item.level}%`,
-													background: colorMap[group.color],
-												}}
-											/>
-										</div>
-									</div>
+									<span
+										key={item}
+										className="skill-tag"
+										style={{
+											color: colorMap[group.color],
+											borderColor: colorMap[group.color] + '33',
+											background: colorMap[group.color] + '0d',
+										}}
+									>
+										{item}
+									</span>
 								))}
 							</div>
 						</div>

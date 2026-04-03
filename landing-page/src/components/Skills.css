@@ -37,39 +37,25 @@
 	color: var(--text-primary);
 }
 
-.skill-item {
-	margin-bottom: 16px;
-}
-
-.skill-item__top {
+.skill-card__items {
 	display: flex;
-	justify-content: space-between;
-	margin-bottom: 6px;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 16px;
 }
 
-.skill-item__name {
-	font-size: 0.82rem;
-	color: var(--text-secondary);
+.skill-tag {
+	font-size: 0.8rem;
+	font-weight: 600;
+	padding: 6px 14px;
+	border: 1px solid;
+	border-radius: 6px;
+	transition: all 0.2s ease;
 }
 
-.skill-item__pct {
-	font-size: 0.78rem;
-	font-weight: 700;
-	font-family: var(--font-mono);
-}
-
-.skill-item__track {
-	height: 3px;
-	background: rgba(255, 255, 255, 0.06);
-	border-radius: 10px;
-	overflow: hidden;
-}
-
-.skill-item__bar {
-	height: 100%;
-	border-radius: 10px;
-	transition: width 1s ease;
-	box-shadow: 0 0 8px currentColor;
+.skill-tag:hover {
+	background: rgba(255, 255, 255, 0.1) !important;
+	transform: translateY(-2px);
 }
 
 @media (max-width: 1024px) {

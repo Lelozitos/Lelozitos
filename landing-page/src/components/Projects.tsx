@@ -14,7 +14,6 @@ interface GithubRepo {
 	size: number;
 	topics: string[];
 	commitCount?: number;
-	languages?: string[]; // top 3 by bytes
 }
 
 /* Fetch total commit count via Link header pagination trick */
@@ -33,23 +32,6 @@ async function fetchCommitCount(repo: string): Promise<number> {
 	}
 }
 
-/* Fetch all languages for a repo, returns top-3 names sorted by bytes */
-async function fetchLanguages(repo: string): Promise<string[]> {
-	try {
-		const res = await fetch(
-			`https://api.github.com/repos/${GITHUB_USER}/${repo}/languages`,
-			{ headers: { Accept: 'application/vnd.github.v3+json' } },
-		);
-		if (!res.ok) return [];
-		const data: Record<string, number> = await res.json();
-		return Object.entries(data)
-			.sort((a, b) => b[1] - a[1])
-			.slice(0, 3)
-			.map(([lang]) => lang);
-	} catch {
-		return [];
-	}
-}
 
 /* Map language → accent color */
 const LANG_COLOR: Record<string, string> = {
@@ -161,20 +143,18 @@ const Projects: React.FC = () => {
 					.filter((r) => !('fork' in r && (r as any).fork))
 					.sort((a, b) => b.size - a.size)
 					.slice(0, 20);
-
-				// 2. Fetch commit counts + all languages in parallel
-				const withDetails = await Promise.all(
+				// 2. Fetch commit counts in parallel
+				const withCommits = await Promise.all(
 					candidates.map(async (r) => ({
 						...r,
 						commitCount: await fetchCommitCount(r.name),
-						languages: await fetchLanguages(r.name),
 					})),
 				);
 
 				if (cancelled) return;
 
 				// 3. Sort by commits, take top 6
-				const sorted = withDetails
+				const sorted = withCommits
 					.sort((a, b) => (b.commitCount ?? 0) - (a.commitCount ?? 0))
 					.slice(0, 6);
 
@@ -254,28 +234,23 @@ const Projects: React.FC = () => {
 										</p>
 
 										<div className="project-card__tags">
-											{(
-												repo.languages ?? (repo.language ? [repo.language] : [])
-											).map((lang, i) => {
-												const c = accentFor(lang);
-												return (
-													<span
-														key={lang}
-														className="project-tag"
-														style={
-															i === 0
-																? {
-																		color: c,
-																		borderColor: c + '33',
-																		background: c + '0d',
-																	}
-																: {}
-														}
-													>
-														{lang}
-													</span>
-												);
-											})}
+											{repo.language && (
+												<span
+													className="project-tag"
+													style={{
+														color: accent,
+														borderColor: accent + '33',
+														background: accent + '0d',
+													}}
+												>
+													{repo.language}
+												</span>
+											)}
+											{repo.topics.slice(0, 3).map((t) => (
+												<span key={t} className="project-tag">
+													{t}
+												</span>
+											))}
 										</div>
 									</a>
 								);
