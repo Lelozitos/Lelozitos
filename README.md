@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://lelozitos.github.io/Lelozitos/">
+  <a href="https://lelozitos.github.io/Lelozitos/" target="_blank">
     <img src="https://capsule-render.vercel.app/api?type=waving&color=00d27a&height=200&section=header&text=Leandro&fontSize=80&fontColor=ffffff&animation=fadeIn" alt="Header" />
   </a>
 </div>
@@ -14,6 +14,13 @@
 <p align="center">
   In my free time, I enjoy analyzing lap telemetry from a Formula 1 race and running physics simulations just to watch particles behave in interesting ways.
 </p>
+
+<div align="center">
+  <br />
+  <a href="https://lelozitos.github.io/Lelozitos/" target="_blank">
+    <img src="https://img.shields.io/badge/VISIT_MY_PORTFOLIO-00d27a?style=for-the-badge&logo=react&logoColor=black" alt="Portfolio" />
+  </a>
+</div>
 
 ## 🛠️ Languages and Tools
 
