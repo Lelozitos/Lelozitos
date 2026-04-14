@@ -1,7 +1,12 @@
 import React from 'react';
 import './Footer.css';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../i18n/translations';
 
 const Footer: React.FC = () => {
+	const { language } = useLanguage();
+	const t = translations[language];
+
 	return (
 		<footer className="footer">
 			<div className="container footer__inner">
@@ -21,11 +26,11 @@ const Footer: React.FC = () => {
 					</span>
 				</a>
 				<p className="footer__copy">
-					Built with React + TypeScript · {new Date().getFullYear()}
+					{t.footerBuilt} · {new Date().getFullYear()}
 				</p>
 				<div className="footer__status">
 					<span className="footer__status-dot" />
-					All systems nominal
+					{t.footerStatus}
 				</div>
 			</div>
 		</footer>

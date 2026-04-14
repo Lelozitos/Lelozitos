@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Projects.css';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../i18n/translations';
 
 const GITHUB_USER = 'Lelozitos';
 
@@ -121,6 +123,9 @@ const SkeletonCard: React.FC = () => (
 );
 
 const Projects: React.FC = () => {
+	const { language } = useLanguage();
+	const t = translations[language];
+
 	const [repos, setRepos] = useState<GithubRepo[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
@@ -174,10 +179,10 @@ const Projects: React.FC = () => {
 	return (
 		<section id="projects" className="projects section">
 			<div className="container">
-				<div className="section-label">{'// projects'}</div>
-				<h2 className="section-title">Things I've built</h2>
+				<div className="section-label">{t.projLabel}</div>
+				<h2 className="section-title">{t.projTitle}</h2>
 				<p className="section-subtitle">
-					Pulled live from{' '}
+					{t.projSub.split('github.com/Lelozitos')[0]}
 					<a
 						href={`https://github.com/${GITHUB_USER}`}
 						target="_blank"
@@ -185,8 +190,8 @@ const Projects: React.FC = () => {
 						className="projects__gh-link"
 					>
 						github.com/{GITHUB_USER}
-					</a>{' '}
-					— sorted by most commits.
+					</a>
+					{t.projSub.split('github.com/Lelozitos')[1]}
 				</p>
 
 				{error && (
@@ -222,7 +227,7 @@ const Projects: React.FC = () => {
 												)}
 												{repo.commitCount !== undefined && (
 													<span className="project-meta-item project-meta-item--commits">
-														↑ {repo.commitCount} commits
+														↑ {repo.commitCount} {t.projCommits}
 													</span>
 												)}
 											</div>

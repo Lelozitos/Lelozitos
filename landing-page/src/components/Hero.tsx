@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './Hero.css';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../i18n/translations';
 
 /* ── Animated candlestick / live chart canvas ─────────────────────────── */
 const CANDLES = 28;
@@ -101,6 +103,8 @@ const TICKERS = [
 
 const Hero: React.FC = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
+	const { language } = useLanguage();
+	const t = translations[language];
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
@@ -133,7 +137,7 @@ const Hero: React.FC = () => {
 			{/* Ticker tape */}
 			<div className="ticker">
 				<div className="ticker__track">
-					{[...TICKERS, ...TICKERS].map((t, i) => (
+					{[...TICKERS, ...TICKERS, ...TICKERS, ...TICKERS].map((t, i) => (
 						<span key={i} className="ticker__item">
 							<span className="ticker__sym">{t.sym}</span>
 							<span
@@ -151,25 +155,21 @@ const Hero: React.FC = () => {
 				<div className="hero__left">
 					<div className="hero__badge">
 						<span className="hero__badge-dot" />
-						Open to opportunities
+						{t.heroBadge}
 					</div>
 
 					<h1 className="hero__title">
-						Building at the edge of
+						{t.heroTitle1}
 						<br />
-						<span className="hero__title-accent">code</span> &amp;{' '}
-						<span className="hero__title-accent2">markets</span>.
+						<span className="hero__title-accent">{t.heroCode}</span> {t.heroAmp}{' '}
+						<span className="hero__title-accent2">{t.heroMarkets}</span>
 					</h1>
 
-					<p className="hero__subtitle">
-						Developer crafting high-performance systems for financial markets —
-						from algorithmic trading engines to portfolio optimization and
-						real-time risk analytics.
-					</p>
+					<p className="hero__subtitle">{t.heroSub}</p>
 
 					<div className="hero__actions">
 						<a href="#projects" className="btn btn--primary">
-							View Projects
+							{t.heroBtnProj}
 							<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
 								<path
 									d="M1 7h12M7 1l6 6-6 6"
@@ -181,24 +181,24 @@ const Hero: React.FC = () => {
 							</svg>
 						</a>
 						<a href="#contact" className="btn btn--ghost">
-							Get in Touch
+							{t.heroBtnContact}
 						</a>
 					</div>
 
 					<div className="hero__stats">
 						<div className="hero__stat">
 							<span className="hero__stat-val">∞</span>
-							<span className="hero__stat-label">Iterations</span>
+							<span className="hero__stat-label">{t.heroStat1}</span>
 						</div>
 						<div className="hero__stat-divider" />
 						<div className="hero__stat">
 							<span className="hero__stat-val">O(n log n)</span>
-							<span className="hero__stat-label">Avg Complexity</span>
+							<span className="hero__stat-label">{t.heroStat2}</span>
 						</div>
 						<div className="hero__stat-divider" />
 						<div className="hero__stat">
 							<span className="hero__stat-val">100%</span>
-							<span className="hero__stat-label">Caffeine-driven</span>
+							<span className="hero__stat-label">{t.heroStat3}</span>
 						</div>
 					</div>
 				</div>
@@ -207,19 +207,19 @@ const Hero: React.FC = () => {
 					<div className="hero__chart-card">
 						<div className="hero__chart-header">
 							<div className="hero__chart-title">
-								<span className="hero__chart-sym">PORTFOLIO</span>
-								<span className="hero__chart-tag">LIVE SIM</span>
+								<span className="hero__chart-sym">{t.heroChartTitle}</span>
+								<span className="hero__chart-tag">{t.heroChartTag}</span>
 							</div>
 							<div className="hero__chart-price">
 								<span className="hero__chart-val">+18.4%</span>
-								<span className="hero__chart-period">YTD</span>
+								<span className="hero__chart-period">{t.heroChartPeriod}</span>
 							</div>
 						</div>
 						<canvas ref={canvasRef} className="hero__canvas" />
 						<div className="hero__chart-footer">
 							<span className="legend-dot legend-dot--green" />{' '}
-							Optimized&nbsp;&nbsp;
-							<span className="legend-dot legend-dot--gold" /> Moving Avg
+							{t.heroChartOpt}&nbsp;&nbsp;
+							<span className="legend-dot legend-dot--gold" /> {t.heroChartMA}
 						</div>
 					</div>
 				</div>
@@ -227,7 +227,7 @@ const Hero: React.FC = () => {
 
 			{/* Scroll cue */}
 			<div className="hero__scroll">
-				<span>Scroll</span>
+				<span>{t.heroScroll}</span>
 				<div className="hero__scroll-line" />
 			</div>
 		</section>

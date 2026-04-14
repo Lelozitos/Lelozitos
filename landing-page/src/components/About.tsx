@@ -1,11 +1,16 @@
 import React from 'react';
 import './About.css';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../i18n/translations';
 
 const About: React.FC = () => {
+	const { language } = useLanguage();
+	const t = translations[language];
+
 	return (
 		<section id="about" className="about section">
 			<div className="container">
-				<div className="section-label">{'// about me'}</div>
+				<div className="section-label">{t.aboutLabel}</div>
 				<div className="about__inner">
 					<div className="about__avatar">
 						<div className="about__avatar-ring" />
@@ -31,25 +36,11 @@ const About: React.FC = () => {
 
 					<div className="about__text">
 						<h2 className="about__name">
-							Hey, I'm <span className="accent-green">Lelo</span> 👋
+							{t.aboutGreeting} <span className="accent-green">Lelo</span> 👋
 						</h2>
-						<p className="about__bio">
-							I'm a software developer with a deep passion for the intersection
-							of computation and finance. I build tools that turn market noise
-							into signal — quantitative models, portfolio optimizers, risk
-							engines, and algorithmic strategies.
-						</p>
-						<p className="about__bio">
-							When I'm not knee-deep in order books and covariance matrices,
-							you'll find me analyzing lap telemetry from a Formula 1 race or
-							running physics simulations just to watch particles behave in
-							interesting ways.
-						</p>
-						<p className="about__bio">
-							I believe the best software is built at the edges — where pure
-							math meets real-world constraints, where microseconds matter, and
-							where elegance pays off.
-						</p>
+						<p className="about__bio">{t.aboutBio1}</p>
+						<p className="about__bio">{t.aboutBio2}</p>
+						<p className="about__bio">{t.aboutBio3}</p>
 
 						<div className="about__tags">
 							{[

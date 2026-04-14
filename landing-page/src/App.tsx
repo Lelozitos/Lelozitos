@@ -9,20 +9,24 @@ import Passions from './components/Passions';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
+import { LanguageProvider } from './contexts/LanguageContext';
+
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Passions />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="app">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Passions />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 

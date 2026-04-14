@@ -1,5 +1,7 @@
 import React from 'react';
 import './Skills.css';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../i18n/translations';
 
 interface SkillGroup {
 	category: string;
@@ -8,37 +10,6 @@ interface SkillGroup {
 	items: string[];
 }
 
-const SKILL_GROUPS: SkillGroup[] = [
-	{
-		category: 'Financial Engineering',
-		icon: '📈',
-		color: 'green',
-		items: [
-			'Portfolio Optimization',
-			'Algorithmic Trading',
-			'Risk Metrics',
-			'Covariance Denoising',
-		],
-	},
-	{
-		category: 'Development',
-		icon: '⚙️',
-		color: 'blue',
-		items: ['Python', 'C++', 'TypeScript', 'Rust'],
-	},
-	{
-		category: 'Physics & Simulation',
-		icon: '🔭',
-		color: 'gold',
-		items: [
-			'Fluid Dynamics',
-			'F1 Aerodynamics Models',
-			'N-Body Simulation',
-			'Monte Carlo Methods',
-		],
-	},
-];
-
 const colorMap = {
 	green: 'var(--accent-green)',
 	gold: 'var(--accent-gold)',
@@ -46,14 +17,46 @@ const colorMap = {
 };
 
 const Skills: React.FC = () => {
+	const { language } = useLanguage();
+	const t = translations[language];
+
+	const SKILL_GROUPS: SkillGroup[] = [
+		{
+			category: t.skillsCat1,
+			icon: '📈',
+			color: 'green',
+			items: [
+				'Portfolio Optimization',
+				'Algorithmic Trading',
+				'Risk Metrics',
+				'Covariance Denoising',
+			],
+		},
+		{
+			category: t.skillsCat2,
+			icon: '⚙️',
+			color: 'blue',
+			items: ['Python', 'C++', 'TypeScript', 'Rust'],
+		},
+		{
+			category: t.skillsCat3,
+			icon: '🔭',
+			color: 'gold',
+			items: [
+				'Fluid Dynamics',
+				'F1 Aerodynamics Models',
+				'N-Body Simulation',
+				'Monte Carlo Methods',
+			],
+		},
+	];
+
 	return (
 		<section id="skills" className="skills section">
 			<div className="container">
-				<div className="section-label">{'// skills'}</div>
-				<h2 className="section-title">What I work with</h2>
-				<p className="section-subtitle">
-					A toolkit built around performance, precision, and mathematical rigor.
-				</p>
+				<div className="section-label">{t.skillsLabel}</div>
+				<h2 className="section-title">{t.skillsTitle}</h2>
+				<p className="section-subtitle">{t.skillsSub}</p>
 
 				<div className="skills__grid">
 					{SKILL_GROUPS.map((group) => (

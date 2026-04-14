@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './Passions.css';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../i18n/translations';
 
 /* ── Mini F1-style speed chart ───────────────────────────────────────────*/
 function drawSpeedTrace(canvas: HTMLCanvasElement) {
@@ -62,6 +64,8 @@ function drawSpeedTrace(canvas: HTMLCanvasElement) {
 
 const Passions: React.FC = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
+	const { language } = useLanguage();
+	const t = translations[language];
 
 	useEffect(() => {
 		if (canvasRef.current) drawSpeedTrace(canvasRef.current);
@@ -70,8 +74,8 @@ const Passions: React.FC = () => {
 	return (
 		<section id="passions" className="passions section">
 			<div className="container">
-				<div className="section-label">{'// beyond the code'}</div>
-				<h2 className="section-title">What drives me</h2>
+				<div className="section-label">{t.passLabel}</div>
+				<h2 className="section-title">{t.passTitle}</h2>
 
 				<div className="passions__grid">
 					{/* F1 Card */}
@@ -81,41 +85,33 @@ const Passions: React.FC = () => {
 							<div className="passion-card__header">
 								<span className="passion-card__emoji">🏎️</span>
 								<div>
-									<h3 className="passion-card__title">Formula 1</h3>
-									<p className="passion-card__sub">
-										Where physics meets the limit
-									</p>
+									<h3 className="passion-card__title">{t.passF1Title}</h3>
+									<p className="passion-card__sub">{t.passF1Sub}</p>
 								</div>
 							</div>
-							<p className="passion-card__text">
-								F1 is engineering at its most extreme. The aerodynamics, tire
-								degradation strategies, and race simulations are as complex as
-								any financial model. I analyze lap telemetry, study DRS
-								deployment timing, and understand why the undercut works when it
-								does.
-							</p>
+							<p className="passion-card__text">{t.passF1Text}</p>
 							<div className="f1-metrics">
 								<div className="f1-metric">
 									<span className="f1-metric__val" style={{ color: '#ff4757' }}>
 										340+
 									</span>
-									<span className="f1-metric__label">km/h top speed</span>
+									<span className="f1-metric__label">{t.passF1Stat1}</span>
 								</div>
 								<div className="f1-metric">
 									<span className="f1-metric__val" style={{ color: '#f0b429' }}>
-										6G
+										5G
 									</span>
-									<span className="f1-metric__label">Braking force</span>
+									<span className="f1-metric__label">{t.passF1Stat2}</span>
 								</div>
 								<div className="f1-metric">
 									<span className="f1-metric__val" style={{ color: '#00d27a' }}>
 										1.82s
 									</span>
-									<span className="f1-metric__label">Fastest pit stop</span>
+									<span className="f1-metric__label">{t.passF1Stat3}</span>
 								</div>
 							</div>
 							<div className="f1-chart">
-								<div className="f1-chart__label">Speed trace — Monaco S1</div>
+								<div className="f1-chart__label">{t.passF1Chart}</div>
 								<canvas ref={canvasRef} className="f1-canvas" />
 							</div>
 						</div>
@@ -128,17 +124,11 @@ const Passions: React.FC = () => {
 							<div className="passion-card__header">
 								<span className="passion-card__emoji">⚛️</span>
 								<div>
-									<h3 className="passion-card__title">Physics Simulations</h3>
-									<p className="passion-card__sub">The universe, in a loop</p>
+									<h3 className="passion-card__title">{t.passPhysTitle}</h3>
+									<p className="passion-card__sub">{t.passPhysSub}</p>
 								</div>
 							</div>
-							<p className="passion-card__text">
-								There's something deeply satisfying about watching emergent
-								complexity bloom from simple physical rules. I build simulations
-								to understand — gravity, fluid dynamics, electromagnetic fields
-								— and to see if the math holds up when you push it to 10,000
-								particles.
-							</p>
+							<p className="passion-card__text">{t.passPhysText}</p>
 
 							<div className="physics-sim">
 								{Array.from({ length: 32 }).map((_, i) => (

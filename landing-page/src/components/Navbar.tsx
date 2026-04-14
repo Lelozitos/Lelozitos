@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
-
-const NAV_LINKS = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Passions', href: '#passions' },
-  { label: 'Contact', href: '#contact' },
-];
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../i18n/translations';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language];
+
+  const navLinks = [
+    { label: t.navAbout, href: '#about' },
+    { label: t.navSkills, href: '#skills' },
+    { label: t.navProjects, href: '#projects' },
+    { label: t.navPassions, href: '#passions' },
+    { label: t.navContact, href: '#contact' },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -38,8 +43,8 @@ const Navbar: React.FC = () => {
       </button>
 
       <ul className={`navbar__links${menuOpen ? ' navbar__links--open' : ''}`}>
-        {NAV_LINKS.map((link) => (
-          <li key={link.label}>
+        {navLinks.map((link) => (
+          <li key={link.href}>
             <a
               href={link.href}
               className="navbar__link"
@@ -55,8 +60,13 @@ const Navbar: React.FC = () => {
             className="navbar__cta"
             onClick={() => setMenuOpen(false)}
           >
-            Let's Talk
+            {t.navLetsTalk}
           </a>
+        </li>
+        <li>
+          <button className="navbar__lang-toggle" onClick={toggleLanguage}>
+            {language === 'en' ? 'PT' : 'EN'}
+          </button>
         </li>
       </ul>
     </nav>

@@ -76,6 +76,26 @@
 	box-shadow: 0 0 24px rgba(0, 210, 122, 0.4);
 }
 
+.navbar__lang-toggle {
+	background: transparent;
+	color: var(--text-secondary);
+	border: 1px solid var(--border);
+	padding: 6px 10px;
+	border-radius: var(--radius-sm);
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	font-weight: 700;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	margin-left: 8px;
+}
+
+.navbar__lang-toggle:hover {
+	color: var(--text-primary);
+	border-color: var(--text-muted);
+	background: rgba(255, 255, 255, 0.05);
+}
+
 /* Burger */
 .navbar__burger {
 	display: none;
