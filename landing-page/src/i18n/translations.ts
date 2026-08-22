@@ -1,150 +1,147 @@
 export type Language = 'en' | 'pt';
 
 export const translations = {
-  en: {
-    // Navbar
-    navAbout: 'About',
-    navSkills: 'Skills',
-    navProjects: 'Projects',
-    navPassions: 'Passions',
-    navContact: 'Contact',
-    navLetsTalk: "Let's Talk",
-    
-    // Hero
-    heroBadge: 'Open to opportunities',
-    heroTitle1: 'Building at the edge of',
-    heroCode: 'code',
-    heroAmp: '&',
-    heroMarkets: 'markets.',
-    heroSub: 'Developer crafting high-performance systems for financial markets — from algorithmic trading engines to portfolio optimization and real-time risk analytics.',
-    heroBtnProj: 'View Projects',
-    heroBtnContact: 'Get in Touch',
-    heroStat1: 'Iterations',
-    heroStat2: 'Avg Complexity',
-    heroStat3: 'Caffeine-driven',
-    heroChartTitle: 'PORTFOLIO',
-    heroChartTag: 'LIVE SIM',
-    heroChartPeriod: 'YTD',
-    heroChartOpt: 'Optimized',
-    heroChartMA: 'Moving Avg',
-    heroScroll: 'Scroll',
+	en: {
+		// Navbar
+		navAbout: 'About',
+		navProjects: 'Work',
+		navResearch: 'Research',
+		navContact: 'Contact',
 
-    // About
-    aboutLabel: '// about me',
-    aboutGreeting: "Hey, I'm",
-    aboutBio1: "I'm a software developer with a deep passion for the intersection of computation and finance. I build tools that turn market noise into signal — quantitative models, portfolio optimizers, risk engines, and algorithmic strategies.",
-    aboutBio2: "When I'm not knee-deep in order books and covariance matrices, you'll find me analyzing lap telemetry from a Formula 1 race or running physics simulations just to watch particles behave in interesting ways.",
-    aboutBio3: "I believe the best software is built at the edges — where pure math meets real-world constraints, where microseconds matter, and where elegance pays off.",
+		// Hero
+		heroEyebrow: 'Quantitative finance · Software · Research',
+		heroLede:
+			'I work on quantitative finance and software — models, trading systems, and research around markets.',
+		heroNow:
+			"Right now I'm mostly writing Python and C++, reading about portfolio construction and risk, and going down whatever rabbit hole a market question or a physics simulation opens up.",
+		heroLinks: 'Work · About · Contact',
 
-    // Skills
-    skillsLabel: '// skills',
-    skillsTitle: 'What I work with',
-    skillsSub: 'A toolkit built around performance, precision, and mathematical rigor.',
-    skillsCat1: 'Financial Engineering',
-    skillsCat2: 'Development',
-    skillsCat3: 'Physics & Simulation',
+		// About
+		aboutLabel: 'About',
+		aboutGreeting: "I'm Leandro",
+		aboutBio1:
+			"I'm a software developer with a deep interest in the intersection of computation and finance. I build tools that turn market data into something usable — quantitative models, portfolio optimizers, risk engines, and algorithmic strategies.",
+		aboutBio2:
+			'Outside of that, I spend time analyzing Formula 1 lap telemetry and running physics simulations, mostly to see how far simple rules can go before they produce something interesting.',
+		aboutBio3:
+			'I care about software built at the edges — where the math has to meet real constraints, where small inefficiencies compound, and where getting the details right actually pays off.',
+		aboutListLabel: 'Working with',
+		aboutListQuant: 'Quantitative',
+		aboutListQuantItems:
+			'Portfolio optimization · Algorithmic trading · Risk metrics · Covariance denoising',
+		aboutListCode: 'Software',
+		aboutListCodeItems: 'Python · C++ · TypeScript · Rust',
+		aboutListSim: 'Simulation',
+		aboutListSimItems:
+			'N-body simulation · Monte Carlo methods · Fluid dynamics · F1 telemetry',
 
-    // Projects
-    projLabel: '// projects',
-    projTitle: "Things I've built",
-    projSub: 'Pulled live from github.com/Lelozitos — sorted by most commits.',
-    projCommits: 'commits',
+		// Research
+		researchLabel: 'Research',
+		researchTitle: 'Quantitative research',
+		researchSub: 'Two repos where most of the quant work actually lives.',
+		researchIdleTag: 'Python library',
+		researchIdleText:
+			'A pandas-native quant finance library — a .finance accessor that goes straight from a price DataFrame to returns, risk metrics, and portfolio weights. Covers Black-Litterman and efficient-frontier optimization, Marchenko-Pastur covariance denoising, VaR/CVaR and drawdown risk metrics, bond pricing and duration, Black-Scholes options with a full Greeks and implied-vol surface, DCF and dividend-discount equity valuation, and GBM/jump-diffusion/mean-reverting simulation.',
+		researchIdleMeta: 'pip install IdleFinance · MIT license',
+		researchQuantTag: 'Research notebooks',
+		researchQuantText:
+			'A self-study curriculum running from probability theory through derivatives pricing, plus one-off notebooks that test a specific market claim against real data — for example, whether "it can\'t fall any further" holds up against eight real B3 distress cases and a few long-shot Polymarket bets.',
+		researchQuantMeta: 'Jupyter notebooks',
 
-    // Passions
-    passLabel: '// beyond the code',
-    passTitle: 'What drives me',
-    passF1Title: 'Formula 1',
-    passF1Sub: 'Where physics meets the limit',
-    passF1Text: 'F1 is engineering at its most extreme. The aerodynamics, tire degradation strategies, and race simulations are as complex as any financial model. I analyze lap telemetry, study DRS deployment timing, and understand why the undercut works when it does.',
-    passF1Stat1: 'km/h top speed',
-    passF1Stat2: 'Braking force',
-    passF1Stat3: 'Fastest pit stop',
-    passF1Chart: 'Speed trace — Monaco S1',
-    passPhysTitle: 'Physics Simulations',
-    passPhysSub: 'The universe, in a loop',
-    passPhysText: "There's something deeply satisfying about watching emergent complexity bloom from simple physical rules. I build simulations to understand — gravity, fluid dynamics, electromagnetic fields — and to see if the math holds up when you push it to 10,000 particles.",
+		// Projects
+		projLabel: 'Work',
+		projTitle: 'My portfolio',
+		projSub:
+			'Pulled live from github.com/Lelozitos — most recently updated first.',
+		projLoading: 'Loading repositories…',
+		projEmpty: 'No public repositories found.',
+		projRateLimited:
+			"GitHub's public API is rate-limited and this browser hit that limit — see the projects directly at github.com/Lelozitos instead.",
+		projLoadError:
+			"Couldn't load repositories — see them directly at github.com/Lelozitos instead.",
 
-    // Contact & Footer
-    contactLabel: '// contact',
-    contactTitle: "Let's build something.",
-    contactSub: "Whether you're looking to optimize a portfolio, build a high-frequency trading engine, or just want to chat about market microstructure.",
-    contactEmail: 'Send an Email',
-    contactLinkedIn: 'Connect on LinkedIn',
-    contactGithub: 'View GitHub',
-    footerBuilt: 'Built with React + TypeScript',
-    footerStatus: 'All systems nominal',
-  },
-  pt: {
-    // Navbar
-    navAbout: 'Sobre',
-    navSkills: 'Habilidades',
-    navProjects: 'Projetos',
-    navPassions: 'Paixões',
-    navContact: 'Contato',
-    navLetsTalk: 'Vamos Conversar',
+		// Contact
+		contactLabel: 'Contact',
+		contactTitle: 'Get in touch',
+		contactSub:
+			'If you want to talk about a portfolio problem, a trading system, or market microstructure, reach me here.',
+		contactEmail: 'Email',
+		contactLinkedIn: 'LinkedIn',
+		contactGithub: 'GitHub',
 
-    // Hero
-    heroBadge: 'Aberto a oportunidades',
-    heroTitle1: 'Construindo no limite de',
-    heroCode: 'código',
-    heroAmp: 'e',
-    heroMarkets: 'mercados.',
-    heroSub: 'Desenvolvedor criando sistemas de alta performance para mercados financeiros — desde motores de negociação algorítmica até otimização de portfólio e análise de risco em tempo real.',
-    heroBtnProj: 'Ver Projetos',
-    heroBtnContact: 'Entrar em Contato',
-    heroStat1: 'Iterações',
-    heroStat2: 'Complex. Média',
-    heroStat3: 'Movido a Cafeína',
-    heroChartTitle: 'PORTFÓLIO',
-    heroChartTag: 'SIMULAÇÃO',
-    heroChartPeriod: 'ANO',
-    heroChartOpt: 'Otimizado',
-    heroChartMA: 'Média Móvel',
-    heroScroll: 'Rolar',
+		// Footer
+		footerTagline: 'Quantitative finance · Software · Research',
+	},
+	pt: {
+		// Navbar
+		navAbout: 'Sobre',
+		navProjects: 'Trabalho',
+		navResearch: 'Pesquisa',
+		navContact: 'Contato',
 
-    // About
-    aboutLabel: '// sobre mim',
-    aboutGreeting: "Olá, sou",
-    aboutBio1: "Sou um desenvolvedor de software com uma profunda paixão pela interseção de computação e finanças. Construo ferramentas que transformam ruído de mercado em sinal — modelos quantitativos, otimizadores de portfólio, motores de risco e estratégias algorítmicas.",
-    aboutBio2: "Quando não estou imerso em books de ofertas e matrizes de covariância, você me encontrará analisando telemetria de uma corrida de Fórmula 1 ou executando simulações de física apenas para ver como as partículas se comportam de maneiras interessantes.",
-    aboutBio3: "Acredito que o melhor software é construído nos limites — onde a matemática pura encontra restrições do mundo real, onde microssegundos importam e onde a elegância compensa.",
+		// Hero
+		heroEyebrow: 'Finanças quantitativas · Software · Pesquisa',
+		heroLede:
+			'Trabalho com finanças quantitativas e software — modelos, sistemas de negociação e pesquisa sobre mercados.',
+		heroNow:
+			'No momento estou escrevendo principalmente Python e C++, lendo sobre construção de portfólio e risco, e seguindo qualquer questão de mercado ou simulação de física que desperte curiosidade.',
+		heroLinks: 'Trabalho · Sobre · Contato',
 
-    // Skills
-    skillsLabel: '// habilidades',
-    skillsTitle: 'Com o que trabalho',
-    skillsSub: 'Um conjunto de ferramentas focado em performance, precisão e rigor matemático.',
-    skillsCat1: 'Engenharia Financeira',
-    skillsCat2: 'Desenvolvimento',
-    skillsCat3: 'Física & Simulação',
+		// About
+		aboutLabel: 'Sobre',
+		aboutGreeting: 'Sou o Leandro',
+		aboutBio1:
+			'Sou desenvolvedor de software com um interesse profundo pela interseção entre computação e finanças. Construo ferramentas que transformam dados de mercado em algo utilizável — modelos quantitativos, otimizadores de portfólio, motores de risco e estratégias algorítmicas.',
+		aboutBio2:
+			'Fora isso, dedico tempo a analisar telemetria de voltas de Fórmula 1 e a rodar simulações de física, principalmente para ver até onde regras simples conseguem chegar antes de produzir algo interessante.',
+		aboutBio3:
+			'Gosto de software construído nos limites — onde a matemática precisa encontrar restrições reais, onde pequenas ineficiências se acumulam, e onde acertar os detalhes realmente compensa.',
+		aboutListLabel: 'Com o que trabalho',
+		aboutListQuant: 'Quantitativo',
+		aboutListQuantItems:
+			'Otimização de portfólio · Negociação algorítmica · Métricas de risco · Denoising de covariância',
+		aboutListCode: 'Software',
+		aboutListCodeItems: 'Python · C++ · TypeScript · Rust',
+		aboutListSim: 'Simulação',
+		aboutListSimItems:
+			'Simulação de N-corpos · Métodos de Monte Carlo · Dinâmica de fluidos · Telemetria de F1',
 
-    // Projects
-    projLabel: '// projetos',
-    projTitle: 'O que construí',
-    projSub: 'Puxado do github.com/Lelozitos — ordenado por número de commits.',
-    projCommits: 'commits',
+		// Research
+		researchLabel: 'Pesquisa',
+		researchTitle: 'Pesquisa quantitativa',
+		researchSub:
+			'Dois repositórios onde a maior parte do trabalho quant realmente acontece.',
+		researchIdleTag: 'Biblioteca Python',
+		researchIdleText:
+			'Uma biblioteca de finanças quantitativas nativa do pandas — um accessor .finance que vai direto de um DataFrame de preços para retornos, métricas de risco e pesos de portfólio. Cobre otimização Black-Litterman e fronteira eficiente, denoising de covariância via Marchenko-Pastur, métricas de risco VaR/CVaR e drawdown, precificação e duration de títulos, opções Black-Scholes com Greeks completos e superfície de volatilidade implícita, valuation de equities via DCF e modelos de dividendos, e simulação GBM/jump-diffusion/mean-reverting.',
+		researchIdleMeta: 'pip install IdleFinance · licença MIT',
+		researchQuantTag: 'Notebooks de pesquisa',
+		researchQuantText:
+			'Um currículo de autoestudo que vai de teoria de probabilidade até precificação de derivativos, além de notebooks pontuais que testam uma afirmação específica de mercado contra dados reais — por exemplo, se "não tem como cair mais" se sustenta diante de oito casos reais de distress na B3 e algumas apostas de cauda no Polymarket.',
+		researchQuantMeta: 'Notebooks Jupyter',
 
-    // Passions
-    passLabel: '// além do código',
-    passTitle: 'O que me motiva',
-    passF1Title: 'Fórmula 1',
-    passF1Sub: 'Onde a física encontra o limite',
-    passF1Text: 'A F1 é engenharia no seu extremo. A aerodinâmica, estratégias de degradação de pneus e simulações de corrida são tão complexas quanto qualquer modelo financeiro. Analiso telemetria de voltas, estudo o timing do DRS e entendo por que o undercut funciona quando funciona.',
-    passF1Stat1: 'velocidade máx.',
-    passF1Stat2: 'Força de frenagem',
-    passF1Stat3: 'Pit stop mais rápido',
-    passF1Chart: 'Traçado de vel. — Monaco S1',
-    passPhysTitle: 'Simulações de Física',
-    passPhysSub: 'O universo, em um loop',
-    passPhysText: "Há algo profundamente satisfatório em observar uma complexidade emergente florescer a partir de regras físicas simples. Construo simulações para entender — gravidade, dinâmica de fluidos, campos eletromagnéticos — e para ver se a matemática se sustenta quando você a expande para 10.000 partículas.",
+		// Projects
+		projLabel: 'Trabalho',
+		projTitle: 'Meu portfólio',
+		projSub:
+			'Puxado ao vivo de github.com/Lelozitos — mais recentemente atualizados primeiro.',
+		projLoading: 'Carregando repositórios…',
+		projEmpty: 'Nenhum repositório público encontrado.',
+		projRateLimited:
+			'A API pública do GitHub tem limite de requisições e este navegador atingiu esse limite — veja os projetos direto em github.com/Lelozitos.',
+		projLoadError:
+			'Não foi possível carregar os repositórios — veja-os direto em github.com/Lelozitos.',
 
-    // Contact & Footer
-    contactLabel: '// contato',
-    contactTitle: "Vamos construir algo.",
-    contactSub: "Seja para otimizar um portfólio, construir um motor de negociação de alta frequência ou apenas conversar sobre a microestrutura do mercado.",
-    contactEmail: 'Enviar um E-mail',
-    contactLinkedIn: 'Conectar no LinkedIn',
-    contactGithub: 'Ver GitHub',
-    footerBuilt: 'Construído com React + TypeScript',
-    footerStatus: 'Todos os sistemas nominais',
-  }
+		// Contact
+		contactLabel: 'Contato',
+		contactTitle: 'Entre em contato',
+		contactSub:
+			'Se quiser conversar sobre um problema de portfólio, um sistema de negociação ou microestrutura de mercado, me encontre por aqui.',
+		contactEmail: 'E-mail',
+		contactLinkedIn: 'LinkedIn',
+		contactGithub: 'GitHub',
+
+		// Footer
+		footerTagline: 'Finanças quantitativas · Software · Pesquisa',
+	},
 };
